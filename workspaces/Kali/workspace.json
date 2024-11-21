@@ -19,6 +19,7 @@
       "cmd":"/dockerstartup/alternate-gateway.sh"
     }
   },
+  "allow_network_selection": true,
   "cores": 4,
   "memory": 2768,
   "gpu_count": 0,

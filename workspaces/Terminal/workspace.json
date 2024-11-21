@@ -24,6 +24,7 @@
       "cmd":"/dockerstartup/alternate-gateway.sh"
     }
   },
+  "allow_network_selection": true,
   "architecture": [
     "amd64",
     "arm64"
@@ -32,11 +33,11 @@
     {
       "version": "1.16.x",
       "image": "public.ecr.aws/f0t2c9i0/kasm/kasm-terminal:1.16.1-rolling-weekly",
-      "uncompressed_size_mb": 30000,
+      "uncompressed_size_mb": 3200,
       "available_tags": [
         "1.16.1-rolling-weekly"
       ]
     }
   ],
-  "uncompressed_size_mb": 30000
+  "uncompressed_size_mb": 3200
 }

@@ -19,6 +19,7 @@
       "cmd":"/dockerstartup/alternate-gateway.sh"
     }
   },
+  "allow_network_selection": true,
   "cores": 4,
   "memory": 2768,
   "gpu_count": 0,
@@ -41,11 +42,11 @@
     {
       "version": "1.16.x",
       "image": "public.ecr.aws/f0t2c9i0/kasm/kasm-parrot:1.16.1-rolling-weekly",
-      "uncompressed_size_mb": 40000,
+      "uncompressed_size_mb": 42300,
       "available_tags": [
         "1.16.1-rolling-weekly"
       ]
     }
   ],
-  "uncompressed_size_mb": 40000
+  "uncompressed_size_mb": 42300
 }

@@ -2,12 +2,11 @@
   "friendly_name": "Terminal VPN",
   "image_src": "terminal.png",
   "description": "Xfce Terminal is a lightweight and easy to use terminal emulator application with many advanced features including drop down, tabs, unlimited scrolling, full colors, fonts, transparent backgrounds, and more.",
-  "name": "kasm/kasm-terminal:1.16.1-rolling-weekly",
   "cores": 2,
   "memory": 2768,
   "gpu_count": 0,
   "cpu_allocation_method": "Inherit",
-  "docker_registry": "https://public.ecr.aws/f0t2c9i0/",
+  "docker_registry": "https://public.ecr.aws/",
   "categories": [],
   "require_gpu": false,
   "enabled": true,
@@ -18,12 +17,26 @@
       "TERMINAL_ARGS": "--fullscreen --hide-borders --hide-menubar --zoom=-1 --hide-scrollbar"
     }
   },
+  "exec_config": {
+    "first_launch":{
+      "user":"root",
+      "privileged":true,
+      "cmd":"/dockerstartup/alternate-gateway.sh"
+    }
+  },
   "architecture": [
     "amd64",
     "arm64"
   ],
   "compatibility": [
-    "1.16.x"
+    {
+      "version": "1.16.x",
+      "image": "f0t2c9i0/kasm/kasm-terminal:1.16.1-rolling-weekly",
+      "uncompressed_size_mb": 30000,
+      "available_tags": [
+        "1.16.1-rolling-weekly"
+      ]
+    }
   ],
-  "uncompressed_size_mb": 2300
+  "uncompressed_size_mb": 30000
 }

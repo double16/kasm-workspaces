@@ -2,7 +2,7 @@
   "friendly_name": "Kali Linux VPN",
   "image_src": "kali.png",
   "description": "Kali Linux is a Debian-derived Linux distribution designed for digital forensics and penetration testing.",
-  "name": "kasm/kasm-kali:1.16.1-rolling-weekly",
+  "name": "public.ecr.aws/f0t2c9i0/kasm/kasm-kali:1.16.1-rolling-weekly",
   "run_config": {
     "hostname": "kasm",
     "cap_add": [
@@ -13,11 +13,18 @@
       "8.8.4.4"
     ]
   },
+  "exec_config": {
+    "first_launch":{
+      "user":"root",
+      "privileged":true,
+      "cmd":"/dockerstartup/alternate-gateway.sh"
+    }
+  },
   "cores": 4,
   "memory": 2768,
   "gpu_count": 0,
   "cpu_allocation_method": "Inherit",
-  "docker_registry": "https://public.ecr.aws/f0t2c9i0/",
+  "docker_registry": "https://public.ecr.aws/",
   "categories": [
     "Desktop",
     "Security",

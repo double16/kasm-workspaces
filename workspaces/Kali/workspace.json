@@ -1,0 +1,38 @@
+{
+  "friendly_name": "Kali Linux VPN",
+  "image_src": "kali.png",
+  "description": "Kali Linux is a Debian-derived Linux distribution designed for digital forensics and penetration testing.",
+  "name": "kasm/kasm-kali:1.16.1-rolling-weekly",
+  "run_config": {
+    "hostname": "kasm",
+    "cap_add": [
+      "NET_ADMIN"
+    ],
+    "dns": [
+      "8.8.8.8",
+      "8.8.4.4"
+    ]
+  },
+  "cores": 4,
+  "memory": 2768,
+  "gpu_count": 0,
+  "cpu_allocation_method": "Inherit",
+  "docker_registry": "https://public.ecr.aws/f0t2c9i0/",
+  "categories": [
+    "Desktop",
+    "Security",
+    "Development"
+  ],
+  "require_gpu": false,
+  "enabled": true,
+  "image_type": "Container",
+  "notes": "The Kasm Kali Linux Workspace requires libseccomp => 2.5.3 to run.\n\nThis can be checked by running runc --version\n\nIf you still want to run Kali Linux but do not have the minimum required libseccomp version, it can be run in an unsecure manner by adding: {\"security_opt\":[\"seccomp=unconfined\"]} to the Docker Run Config Override (JSON) setting above.\n\nNOTE: This will run the Workspace without the docker seccomp sandbox and will significantly reduce the amount of protection that Kasm Workspaces can provide.\n\n\nThis image includes software that may not function properly unless the Kasm session is executed with elevated privileges.\n\nPlease see the following documentation for configuring the image to run as root, utilize sudo, or other custom privileges.\n\nhttps://kasmweb.com/docs/latest/how_to/running_as_root.html",
+  "architecture": [
+    "amd64",
+    "arm64"
+  ],
+  "compatibility": [
+    "1.16.x"
+  ],
+  "uncompressed_size_mb": 8860
+}

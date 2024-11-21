@@ -2,15 +2,15 @@
 
 const nextConfig = {
   env: {
-    name: 'Kasm Technologies',
-    description: 'The official store for Kasm supported workspaces.',
-    icon: '/img/logo.svg',
-    listUrl: 'https://registry.kasmweb.com/',
-    contactUrl: 'https://kasmweb.com/support',
+    name: 'double16 Cybersecurity Workspaces',
+    description: 'Workspaces for cybersecurity work.',
+    icon: 'https://double16.github.io/kasm-workspaces/1.0/image.svg',
+    listUrl: 'https://double16.github.io/kasm-workspaces/',
+    contactUrl: 'https://github.com/double16/kasm-workspaces/issues',
   },
   reactStrictMode: true,
   swcMinify: true,
-  basePath: '/kasm-registry/1.0',
+  basePath: '/kasm-workspaces/1.0',
   trailingSlash: true,
   images: {
     unoptimized: true,

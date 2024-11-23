@@ -16,10 +16,10 @@
     }
   },
   "allow_network_selection": true,
-  "cores": 4,
+  "cores": 1,
   "memory": 2768,
   "gpu_count": 0,
-  "cpu_allocation_method": "Inherit",
+  "cpu_allocation_method": "Shares",
   "docker_registry": "https://public.ecr.aws/",
   "categories": [
     "Desktop",

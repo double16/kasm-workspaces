@@ -6,10 +6,6 @@
     "hostname": "kasm",
     "cap_add": [
       "NET_ADMIN"
-    ],
-    "dns": [
-      "8.8.8.8",
-      "8.8.4.4"
     ]
   },
   "exec_config": {

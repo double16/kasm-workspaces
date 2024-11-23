@@ -17,7 +17,7 @@
   },
   "allow_network_selection": true,
   "cores": 1,
-  "memory": 2768,
+  "memory": 6144,
   "gpu_count": 0,
   "cpu_allocation_method": "Shares",
   "docker_registry": "https://public.ecr.aws/",

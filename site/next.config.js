@@ -4,7 +4,7 @@ const nextConfig = {
   env: {
     name: 'bramblethorn',
     description: 'Workspaces for cybersecurity work.',
-    icon: 'https://double16.github.io/kasm-workspaces/1.0/logo.svg',
+    icon: 'logo.jpg',
     listUrl: 'https://double16.github.io/kasm-workspaces/',
     contactUrl: 'https://github.com/double16/kasm-workspaces/issues',
   },

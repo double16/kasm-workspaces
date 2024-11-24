@@ -1,5 +1,5 @@
 {
-  "friendly_name": "Kali Linux VPN",
+  "friendly_name": "Kali Linux VPN lowmem",
   "image_src": "kali.png",
   "description": "Kali Linux is a Debian-derived Linux distribution designed for digital forensics and penetration testing.",
   "run_config": {
@@ -18,7 +18,7 @@
   "allow_network_selection": true,
   "persistent_profile_path": "s3://bramblethorn84-kasm-profiles/{username}/{image_id}/",
   "cores": 1,
-  "memory": 6144,
+  "memory": 1024,
   "gpu_count": 0,
   "cpu_allocation_method": "Shares",
   "docker_registry": "https://public.ecr.aws/",

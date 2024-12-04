@@ -1,17 +1,15 @@
 {
-  "friendly_name": "Obsidian",
-  "image_src": "obsidian.png",
-  "description": "A powerful knowledge base that works on top of a local folder of plain text Markdown files.",
-  "allow_network_selection": false,
+  "friendly_name": "IntelliJ IDEA CE",
+  "description": "The IDE for Java and Kotlin enthusiasts. IntelliJ IDEA Community Edition is completely free to use.",
   "persistent_profile_path": "s3://bramblethorn84-kasm-profiles/{username}/{image_id}/",
   "cores": 1,
-  "memory": 1536,
+  "memory": 2048,
   "gpu_count": 0,
   "cpu_allocation_method": "Shares",
   "docker_registry": "https://public.ecr.aws/",
   "categories": [
     "Desktop",
-    "Productivity"
+    "Development"
   ],
   "require_gpu": false,
   "enabled": true,
@@ -24,10 +22,10 @@
   "compatibility": [
     {
       "version": "1.16.x",
-      "image": "public.ecr.aws/f0t2c9i0/kasm/kasm-obsidian:1.7.7",
-      "uncompressed_size_mb": 4500,
+      "image": "public.ecr.aws/f0t2c9i0/kasm/kasm-ideace:1.16.1-rolling-weekly",
+      "uncompressed_size_mb": 6000,
       "available_tags": [
-        "1.7.7",
+        "2024.3",
         "1.16.1-rolling-weekly"
       ]
     }

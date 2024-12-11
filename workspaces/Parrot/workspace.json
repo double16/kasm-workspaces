@@ -6,6 +6,9 @@
     "hostname": "kasm",
     "cap_add": [
       "NET_ADMIN"
+    ],
+    "devices": [
+      "/dev/net/tun"
     ]
   },
   "exec_config": {

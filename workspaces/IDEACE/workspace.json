@@ -22,7 +22,7 @@
   "compatibility": [
     {
       "version": "1.16.x",
-      "image": "public.ecr.aws/f0t2c9i0/kasm/kasm-ideace:1.16.1-rolling-weekly",
+      "image": "public.ecr.aws/f0t2c9i0/kasm/ideace:1.16.1-rolling-weekly",
       "uncompressed_size_mb": 6000,
       "available_tags": [
         "2024.3.1",

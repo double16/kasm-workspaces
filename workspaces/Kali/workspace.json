@@ -4,6 +4,7 @@
   "description": "Kali Linux is a Debian-derived Linux distribution designed for digital forensics and penetration testing.",
   "run_config": {
     "hostname": "kasm",
+    "privileged":true,
     "cap_add": [
       "NET_ADMIN",
       "CAP_SYS_ADMIN"

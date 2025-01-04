@@ -4,6 +4,7 @@
   "description": "Parrot OS is a Linux distribution based on Debian with a focus on security, privacy, and development.",
   "run_config": {
     "hostname": "kasm",
+    "privileged":true,
     "cap_add": [
       "NET_ADMIN",
       "CAP_SYS_ADMIN"

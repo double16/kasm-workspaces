@@ -1,7 +1,6 @@
 {
   "friendly_name": "BloodHound",
   "description": "BloodHound uses graph theory to reveal the hidden and often unintended relationships within an Active Directory or Azure environment. Attackers can use BloodHound to easily identify highly complex attack paths that would otherwise be impossible to quickly identify. Defenders can use BloodHound to identify and eliminate those same attack paths. Both blue and red teams can use BloodHound to easily gain a deeper understanding of privilege relationships in an Active Directory or Azure environment.",
-  "persistent_profile_path": "s3://bramblethorn84-kasm-profiles/{username}/{image_id}/",
   "image_src": "logo-secondary-transparent-full.svg",
   "cores": 2,
   "memory": 2048,

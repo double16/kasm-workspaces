@@ -3,7 +3,6 @@
   "image_src": "obsidian.png",
   "description": "A powerful knowledge base that works on top of a local folder of plain text Markdown files.",
   "allow_network_selection": false,
-  "persistent_profile_path": "s3://bramblethorn84-kasm-profiles/{username}/{image_id}/",
   "cores": 1,
   "memory": 1536,
   "gpu_count": 0,

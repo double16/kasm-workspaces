@@ -1,7 +1,6 @@
 {
   "friendly_name": "IntelliJ IDEA CE",
   "description": "The IDE for Java and Kotlin enthusiasts. IntelliJ IDEA Community Edition is completely free to use.",
-  "persistent_profile_path": "s3://bramblethorn84-kasm-profiles/{username}/{image_id}/",
   "image_src": "intellij-idea.svg",
   "cores": 1,
   "memory": 2048,

@@ -25,7 +25,6 @@
     }
   },
   "allow_network_selection": true,
-  "persistent_profile_path": "s3://bramblethorn84-kasm-profiles/{username}/{image_id}/",
   "architecture": [
     "amd64",
     "arm64"

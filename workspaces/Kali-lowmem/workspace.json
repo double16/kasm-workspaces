@@ -3,7 +3,7 @@
   "image_src": "kali.png",
   "description": "Kali Linux is a Debian-derived Linux distribution designed for digital forensics and penetration testing.",
   "run_config": {
-    "hostname": "kasm",
+    "hostname": "kali",
     "privileged":true,
     "cap_add": [
       "NET_ADMIN",
@@ -21,7 +21,6 @@
     }
   },
   "allow_network_selection": true,
-  "persistent_profile_path": "s3://bramblethorn84-kasm-profiles/{username}/{image_id}/",
   "cores": 1,
   "memory": 1024,
   "gpu_count": 0,

@@ -23,7 +23,7 @@
   "compatibility": [
     {
       "version": "1.16.x",
-      "image": "public.ecr.aws/f0t2c9i0/kasm/obsidian:1.7.7",
+      "image": "public.ecr.aws/bramblethorn/kasm/obsidian:1.7.7",
       "uncompressed_size_mb": 4500,
       "available_tags": [
         "1.7.7",

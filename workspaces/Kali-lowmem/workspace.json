@@ -1,5 +1,5 @@
 {
-  "friendly_name": "Kali Linux VPN lowmem",
+  "friendly_name": "Kali Linux BT lowmem",
   "image_src": "kali.png",
   "description": "Kali Linux is a Debian-derived Linux distribution designed for digital forensics and penetration testing.",
   "run_config": {

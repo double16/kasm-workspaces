@@ -25,8 +25,9 @@
       "image": "public.ecr.aws/bramblethorn/kasm/bloodhound:1.16.1-rolling-weekly",
       "uncompressed_size_mb": 6000,
       "available_tags": [
+        "1.16.1-rolling-weekly",
         "v6.3.1",
-        "1.16.1-rolling-weekly"
+        "v6.4.0"
       ]
     }
   ]

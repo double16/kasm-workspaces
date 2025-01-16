@@ -1,5 +1,5 @@
 {
-  "friendly_name": "Terminal VPN",
+  "friendly_name": "Terminal BT",
   "image_src": "terminal.png",
   "description": "Xfce Terminal is a lightweight and easy to use terminal emulator application with many advanced features including drop down, tabs, unlimited scrolling, full colors, fonts, transparent backgrounds, and more.",
   "cores": 0.25,

@@ -1,5 +1,5 @@
 {
-  "friendly_name": "Parrot OS VPN",
+  "friendly_name": "Parrot OS BT",
   "image_src": "parrotos.svg",
   "description": "Parrot OS is a Linux distribution based on Debian with a focus on security, privacy, and development.",
   "run_config": {

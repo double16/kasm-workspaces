@@ -25,6 +25,7 @@
     }
   },
   "allow_network_selection": true,
+  "notes": "This Terminal workspace extends the Kasm Terminal workspace as follows:\n  - VPN sidecar support when the VPN network device is bound to x.x.x.2",
   "architecture": [
     "amd64",
     "arm64"

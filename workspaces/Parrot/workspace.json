@@ -21,8 +21,8 @@
     }
   },
   "allow_network_selection": true,
-  "cores": 1,
-  "memory": 4096,
+  "cores": 2,
+  "memory": 8192,
   "gpu_count": 0,
   "cpu_allocation_method": "Shares",
   "docker_registry": "https://public.ecr.aws/",
@@ -34,7 +34,7 @@
   "require_gpu": false,
   "enabled": true,
   "image_type": "Container",
-  "notes": "The Kasm Parrot OS Workspace requires libseccomp => 2.5.3 to run.\n\nThis can be checked by running runc --version\n\nIf you still want to run Parrot OS but do not have the minimum required libseccomp version, it can be run in an unsecure manner by adding: {\"security_opt\":[\"seccomp=unconfined\"]} to the Docker Run Config Override (JSON) setting above.\n\nNOTE: This will run the Workspace without the docker seccomp sandbox and will significantly reduce the amount of protection that Kasm Workspaces can provide.\n\n\nThis image includes software that may not function properly unless the Kasm session is executed with elevated privileges.\n\nPlease see the following documentation for configuring the image to run as root, utilize sudo, or other custom privileges.\n\nhttps://kasmweb.com/docs/latest/how_to/running_as_root.html",
+  "notes": "This Parrot workspace extends the Kasm Parrot workspace as follows:\n  - password-less sudo\n  - more packages including Burp Suite Pro, Postman, ZAP weekly, Caido\n  - VPN sidecar support when the VPN network device is bound to x.x.x.2",
   "architecture": [
     "amd64",
     "arm64"

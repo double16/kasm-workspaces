@@ -26,6 +26,7 @@
       "image": "public.ecr.aws/bramblethorn/kasm/obsidian:1.7.7",
       "uncompressed_size_mb": 4500,
       "available_tags": [
+        "1.8.4",
         "1.7.7",
         "1.16.1-rolling-weekly"
       ]

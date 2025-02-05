@@ -27,7 +27,8 @@
       "available_tags": [
         "1.16.1-rolling-weekly",
         "v6.3.1",
-        "v6.4.0"
+        "v6.4.0",
+        "v7.0.0"
       ]
     }
   ]

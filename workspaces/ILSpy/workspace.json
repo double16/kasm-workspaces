@@ -1,8 +1,8 @@
 {
-  "friendly_name": "BloodHound",
-  "description": "BloodHound uses graph theory to reveal the hidden and often unintended relationships within an Active Directory or Azure environment.",
-  "image_src": "blooghound.svg",
-  "cores": 2,
+  "friendly_name": "Avalonia ILSpy",
+  "description": "Cross-platform open-source .NET assembly browser and decompiler",
+  "image_src": "ILSpy-Large.png",
+  "cores": 1,
   "memory": 2048,
   "gpu_count": 0,
   "cpu_allocation_method": "Shares",
@@ -22,13 +22,11 @@
   "compatibility": [
     {
       "version": "1.16.x",
-      "image": "public.ecr.aws/bramblethorn/kasm/bloodhound:1.16.1-rolling-weekly",
-      "uncompressed_size_mb": 6000,
+      "image": "public.ecr.aws/bramblethorn/kasm/ilspy:1.16.1-rolling-weekly",
+      "uncompressed_size_mb": 5100,
       "available_tags": [
         "1.16.1-rolling-weekly",
-        "v6.3.1",
-        "v6.4.0",
-        "v7.0.0"
+        "v7.2-rc"
       ]
     }
   ]

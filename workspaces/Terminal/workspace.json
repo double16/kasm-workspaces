@@ -6,7 +6,7 @@
   "memory": 768,
   "gpu_count": 0,
   "cpu_allocation_method": "Shares",
-  "docker_registry": "https://public.ecr.aws/",
+  "docker_registry": "https://public.ecr.aws/bramblethorn",
   "categories": [],
   "require_gpu": false,
   "enabled": true,

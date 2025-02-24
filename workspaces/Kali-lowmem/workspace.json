@@ -22,7 +22,7 @@
   },
   "allow_network_selection": true,
   "cores": 1,
-  "memory": 1024,
+  "memory": 1536,
   "gpu_count": 0,
   "cpu_allocation_method": "Shares",
   "docker_registry": "https://public.ecr.aws/bramblethorn",
@@ -34,7 +34,7 @@
   "require_gpu": false,
   "enabled": true,
   "image_type": "Container",
-  "notes": "This Kali workspace extends the Kasm Kali workspace as follows:\n  - password-less sudo\n  - more packages including Burp Suite Pro, Postman, ZAP weekly, Caido\n  - VPN sidecar support when the VPN network device is bound to x.x.x.2\n\nThis lowmem workspace is allocated 1024MB of RAM.",
+  "notes": "This Kali workspace extends the Kasm Kali workspace as follows:\n  - password-less sudo\n  - more packages including Burp Suite Pro, Postman, ZAP weekly, Caido\n  - VPN sidecar support when the VPN network device is bound to x.x.x.2\n\nThis lowmem workspace is allocated 1536MB of RAM.",
   "architecture": [
     "amd64",
     "arm64"

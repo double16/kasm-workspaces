@@ -1,143 +1,110 @@
 import * as cdk from 'aws-cdk-lib';
 import * as ecr from 'aws-cdk-lib/aws-ecr';
+import { format } from "util";
 
 export interface KasmWorkspacesStackProps extends cdk.StackProps {
 }
 
 export class KasmWorkspacesStack extends cdk.Stack {
-  public constructor(scope: cdk.App, id: string, props: KasmWorkspacesStackProps = {}) {
-    super(scope, id, props);
+    public constructor(scope: cdk.App, id: string, props: KasmWorkspacesStackProps = {}) {
+        super(scope, id, props);
 
-    // Resources
-    const ecrPublicRepository00kasmbloodhound00WatxL = new ecr.CfnPublicRepository(this, 'ECRPublicRepository00kasmbloodhound00WatxL', {
-      repositoryName: 'kasm/bloodhound',
-      repositoryCatalogData: {
-        OperatingSystems: [
-          'Linux',
-        ],
-        RepositoryDescription: 'Kasm Workspace for Bloodhound',
-        Architectures: [
-          'ARM 64',
-          'x86-64',
-        ],
-      },
-      tags: [
-      ],
-    });
-    ecrPublicRepository00kasmbloodhound00WatxL.cfnOptions.deletionPolicy = cdk.CfnDeletionPolicy.RETAIN;
+        const aboutStandardText = `
 
-    const ecrPublicRepository00kasmidea000Ka25 = new ecr.CfnPublicRepository(this, 'ECRPublicRepository00kasmidea000Ka25', {
-      repositoryName: 'kasm/idea',
-      repositoryCatalogData: {
-        OperatingSystems: [
-          'Linux',
-        ],
-        Architectures: [
-          'ARM 64',
-          'x86-64',
-        ],
-      },
-      tags: [
-      ],
-    });
-    ecrPublicRepository00kasmidea000Ka25.cfnOptions.deletionPolicy = cdk.CfnDeletionPolicy.RETAIN;
+## Source Code
 
-    const ecrPublicRepository00kasmideace00Mfqu3 = new ecr.CfnPublicRepository(this, 'ECRPublicRepository00kasmideace00Mfqu3', {
-      repositoryName: 'kasm/ideace',
-      repositoryCatalogData: {
-        OperatingSystems: [
-          'Linux',
-        ],
-        Architectures: [
-          'ARM 64',
-          'x86-64',
-        ],
-      },
-      tags: [
-      ],
-    });
-    ecrPublicRepository00kasmideace00Mfqu3.cfnOptions.deletionPolicy = cdk.CfnDeletionPolicy.RETAIN;
+[https://github.com/double16/pentest-tools/tree/master/attackhost](https://github.com/double16/pentest-tools/tree/master/attackhost)
 
-    const ecrPublicRepository00kasmilspy00tryYd = new ecr.CfnPublicRepository(this, 'ECRPublicRepository00kasmilspy00tryYD', {
-      repositoryName: 'kasm/ilspy',
-      repositoryCatalogData: {
-        OperatingSystems: [
-          'Linux',
-        ],
-        RepositoryDescription: 'Linux port of ILSpy',
-        Architectures: [
-          'ARM 64',
-          'x86-64',
-        ],
-      },
-      tags: [
-      ],
-    });
-    ecrPublicRepository00kasmilspy00tryYd.cfnOptions.deletionPolicy = cdk.CfnDeletionPolicy.RETAIN;
+## Reporting Issues
 
-    const ecrPublicRepository00kasmkali00mIogK = new ecr.CfnPublicRepository(this, 'ECRPublicRepository00kasmkali00mIogK', {
-      repositoryName: 'kasm/kali',
-      repositoryCatalogData: {
-        OperatingSystems: [
-          'Linux',
-        ],
-        RepositoryDescription: 'kasm image with additional packages and configuration.\n\nhttps://double16.github.io/kasm-workspaces/1.1/',
-        Architectures: [
-          'ARM 64',
-          'x86-64',
-        ],
-      },
-      tags: [
-      ],
-    });
-    ecrPublicRepository00kasmkali00mIogK.cfnOptions.deletionPolicy = cdk.CfnDeletionPolicy.RETAIN;
+[https://github.com/double16/pentest-tools/issues](https://github.com/double16/pentest-tools/issues)
+`
 
-    const ecrPublicRepository00kasmobsidian00qT2sK = new ecr.CfnPublicRepository(this, 'ECRPublicRepository00kasmobsidian00qT2sK', {
-      repositoryName: 'kasm/obsidian',
-      repositoryCatalogData: {
-        OperatingSystems: [
-          'Linux',
-        ],
-        Architectures: [
-          'ARM 64',
-          'x86-64',
-        ],
-      },
-      tags: [
-      ],
-    });
-    ecrPublicRepository00kasmobsidian00qT2sK.cfnOptions.deletionPolicy = cdk.CfnDeletionPolicy.RETAIN;
+        const standaloneUsageText = `
+## Workspaces
 
-    const ecrPublicRepository00kasmparrot00BeBfA = new ecr.CfnPublicRepository(this, 'ECRPublicRepository00kasmparrot00BeBfA', {
-      repositoryName: 'kasm/parrot',
-      repositoryCatalogData: {
-        OperatingSystems: [
-          'Linux',
-        ],
-        Architectures: [
-          'ARM 64',
-          'x86-64',
-        ],
-      },
-      tags: [
-      ],
-    });
-    ecrPublicRepository00kasmparrot00BeBfA.cfnOptions.deletionPolicy = cdk.CfnDeletionPolicy.RETAIN;
+This image was designed to run natively within [Kasm Workspaces](https://kasmweb.com). The easiest way to use it with Workspaces is by installing the registry at [https://double16.github.io/kasm-workspaces/](https://double16.github.io/kasm-workspaces/).
 
-    const ecrPublicRepository00kasmterminal007R5d7 = new ecr.CfnPublicRepository(this, 'ECRPublicRepository00kasmterminal007R5D7', {
-      repositoryName: 'kasm/terminal',
-      repositoryCatalogData: {
-        OperatingSystems: [
-          'Linux',
-        ],
-        Architectures: [
-          'ARM 64',
-          'x86-64',
-        ],
-      },
-      tags: [
-      ],
-    });
-    ecrPublicRepository00kasmterminal007R5d7.cfnOptions.deletionPolicy = cdk.CfnDeletionPolicy.RETAIN;
-  }
+- [Workspaces](https://www.kasmweb.com/docs/latest/install.html): Instructions for installing and configuring Kasm Workspaces.
+- [Third-Party Registries](https://www.kasmweb.com/docs/latest/guide/workspace_registry.html#rd-party-registry): Instructions for installing a third-party registry.
+
+## Standalone
+
+The image can also be deployed stand-alone and accessed through a web browser.
+
+\`\`\`shell
+docker run --rm -it --shm-size=512m -p 6901:6901 -e VNC_PW=password public.aws.ecr/bramblethorn/%s:1.16.1-weekly
+\`\`\`
+
+The container is now accessible via a browser : https://IP_OF_SERVER:6901
+
+- User: kasm_user
+- Password: password
+
+Please note that some functionality, such as audio, uploads, downloads, and microphone pass-through, is only available when using Kasm Workspaces for orchestration.
+
+`
+
+        function newCfnPublicRepository(stack: KasmWorkspacesStack, cdkName: string, repositoryName: string, repositoryDescription: string) {
+            const repo = new ecr.CfnPublicRepository(stack, cdkName, {
+                repositoryName: repositoryName,
+                repositoryCatalogData: {
+                    OperatingSystems: [
+                        'Linux',
+                    ],
+                    RepositoryDescription: repositoryDescription,
+                    Architectures: [
+                        'ARM 64',
+                        'x86-64',
+                    ],
+                    AboutText: repositoryDescription+aboutStandardText,
+                    UsageText: format(standaloneUsageText, repositoryName),
+                },
+                tags: [],
+            });
+            repo.cfnOptions.deletionPolicy = cdk.CfnDeletionPolicy.RETAIN;
+            return repo;
+        }
+
+        // Resources
+        newCfnPublicRepository(this,
+            'ECRPublicRepository00kasmbloodhound00WatxL',
+            'kasm/bloodhound',
+            'Kasm Workspace for Bloodhound');
+
+        newCfnPublicRepository(this,
+            'ECRPublicRepository00kasmidea000Ka25',
+            'kasm/idea',
+            'Kasm Workspace for IntelliJ IDEA Ultimate');
+
+        newCfnPublicRepository(this,
+            'ECRPublicRepository00kasmideace00Mfqu3',
+            'kasm/ideace',
+            'Kasm Workspace for IntelliJ IDEA Community Edition');
+
+        newCfnPublicRepository(this,
+            'ECRPublicRepository00kasmilspy00tryYD',
+            'kasm/ilspy',
+            'Linux port of ILSpy');
+
+        newCfnPublicRepository(this,
+            'ECRPublicRepository00kasmkali00mIogK',
+            'kasm/kali',
+            'kasm image with additional packages and configuration');
+
+        newCfnPublicRepository(this,
+            'ECRPublicRepository00kasmobsidian00qT2sK',
+            'kasm/obsidian',
+            'Kasm Workspace for Obsidian');
+
+        newCfnPublicRepository(this,
+            'ECRPublicRepository00kasmparrot00BeBfA',
+            'kasm/parrot',
+            'Kasm Workspace for Parrot OS');
+
+        newCfnPublicRepository(this,
+            'ECRPublicRepository00kasmterminal007R5D7',
+            'kasm/terminal',
+            'Kasm Workspace for a terminal using zsh and tmux');
+    }
 }

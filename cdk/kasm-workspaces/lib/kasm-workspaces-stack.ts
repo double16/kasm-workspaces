@@ -57,7 +57,7 @@ The image can also be deployed stand-alone and accessed through a web browser.
 docker run --rm -it --shm-size=512m -p 6901:6901 -e VNC_PW=password %s
 \`\`\`
 
-The container is now accessible via a browser : https://IP_OF_SERVER:6901
+The container is now accessible via a browser : https://IP_OF_SERVER:6901. (Use a non-local IP address, i.e. 127.0.0.1:6901 will not work.)
 
 - User: kasm_user
 - Password: password

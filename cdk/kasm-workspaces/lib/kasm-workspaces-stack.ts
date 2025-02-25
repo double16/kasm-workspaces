@@ -1,6 +1,12 @@
 import * as cdk from 'aws-cdk-lib';
 import * as ecr from 'aws-cdk-lib/aws-ecr';
-import { format } from "util";
+import {format} from "util";
+import * as fs from 'fs';
+
+class WorkspaceDef {
+    description: string;
+    notes: string;
+}
 
 export interface KasmWorkspacesStackProps extends cdk.StackProps {
 }
@@ -45,7 +51,10 @@ Please note that some functionality, such as audio, uploads, downloads, and micr
 
 `
 
-        function newCfnPublicRepository(stack: KasmWorkspacesStack, cdkName: string, repositoryName: string, repositoryDescription: string) {
+        function newCfnPublicRepository(stack: KasmWorkspacesStack, cdkName: string, repositoryName: string, workspaceFile: string) {
+            const workspace = JSON.parse(fs.readFileSync(workspaceFile, 'utf8')) as WorkspaceDef;
+            const repositoryDescription: string = workspace.description || '';
+            const notes: string = workspace.notes || '';
             const repo = new ecr.CfnPublicRepository(stack, cdkName, {
                 repositoryName: repositoryName,
                 repositoryCatalogData: {
@@ -57,7 +66,7 @@ Please note that some functionality, such as audio, uploads, downloads, and micr
                         'ARM 64',
                         'x86-64',
                     ],
-                    AboutText: repositoryDescription+aboutStandardText,
+                    AboutText: (notes || repositoryDescription) + aboutStandardText,
                     UsageText: format(standaloneUsageText, repositoryName),
                 },
                 tags: [],
@@ -70,41 +79,49 @@ Please note that some functionality, such as audio, uploads, downloads, and micr
         newCfnPublicRepository(this,
             'ECRPublicRepository00kasmbloodhound00WatxL',
             'kasm/bloodhound',
-            'Kasm Workspace for Bloodhound');
+            '../../workspaces/Bloodhound/workspace.json',
+        );
 
         newCfnPublicRepository(this,
             'ECRPublicRepository00kasmidea000Ka25',
             'kasm/idea',
-            'Kasm Workspace for IntelliJ IDEA Ultimate');
+            '../../workspaces/IDEA/workspace.json',
+        );
 
         newCfnPublicRepository(this,
             'ECRPublicRepository00kasmideace00Mfqu3',
             'kasm/ideace',
-            'Kasm Workspace for IntelliJ IDEA Community Edition');
+            '../../workspaces/IDEACE/workspace.json',
+        );
 
         newCfnPublicRepository(this,
             'ECRPublicRepository00kasmilspy00tryYD',
             'kasm/ilspy',
-            'Linux port of ILSpy');
+            '../../workspaces/ILSpy/workspace.json',
+        );
 
         newCfnPublicRepository(this,
             'ECRPublicRepository00kasmkali00mIogK',
             'kasm/kali',
-            'kasm image with additional packages and configuration');
+            '../../workspaces/Kali/workspace.json',
+        );
 
         newCfnPublicRepository(this,
             'ECRPublicRepository00kasmobsidian00qT2sK',
             'kasm/obsidian',
-            'Kasm Workspace for Obsidian');
+            '../../workspaces/Obsidian/workspace.json',
+        );
 
         newCfnPublicRepository(this,
             'ECRPublicRepository00kasmparrot00BeBfA',
             'kasm/parrot',
-            'Kasm Workspace for Parrot OS');
+            '../../workspaces/Parrot/workspace.json',
+        );
 
         newCfnPublicRepository(this,
             'ECRPublicRepository00kasmterminal007R5D7',
             'kasm/terminal',
-            'Kasm Workspace for a terminal using zsh and tmux');
+            '../../workspaces/Terminal/workspace.json',
+        );
     }
 }

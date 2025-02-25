@@ -25,7 +25,7 @@
     }
   },
   "allow_network_selection": true,
-  "notes": "This Terminal workspace extends the Kasm Terminal workspace as follows:\n  - VPN sidecar support when the VPN network device is bound to x.x.x.2",
+  "notes": "This Terminal workspace extends the Kasm Terminal workspace as follows:\n  - zsh as default\n  - tmux with custom configuration\n  - VPN sidecar support when the VPN network device is bound to x.x.x.2\n\nIf a network is selected where the x.x.x.2 address is a gateway, traffic will be routed through it. This allows a VPN to run as a container and be shared across containers.",
   "architecture": [
     "amd64",
     "arm64"

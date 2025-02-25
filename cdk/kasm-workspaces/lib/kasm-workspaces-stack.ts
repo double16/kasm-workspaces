@@ -3,9 +3,24 @@ import * as ecr from 'aws-cdk-lib/aws-ecr';
 import {format} from "util";
 import * as fs from 'fs';
 
+class CompatibilityEntry {
+    version: string;
+    image: string;
+    uncompressed_size_mb: number;
+    available_tags: string[];
+
+    constructor(version: string, image: string, uncompressed_size_mb: number, available_tags: string[]) {
+        this.version = version;
+        this.image = image;
+        this.uncompressed_size_mb = uncompressed_size_mb;
+        this.available_tags = available_tags;
+    }
+}
+
 class WorkspaceDef {
     description: string;
     notes: string;
+    compatibility: CompatibilityEntry[];
 }
 
 export interface KasmWorkspacesStackProps extends cdk.StackProps {
@@ -39,7 +54,7 @@ This image was designed to run natively within [Kasm Workspaces](https://kasmweb
 The image can also be deployed stand-alone and accessed through a web browser.
 
 \`\`\`shell
-docker run --rm -it --shm-size=512m -p 6901:6901 -e VNC_PW=password public.aws.ecr/bramblethorn/%s:1.16.1-weekly
+docker run --rm -it --shm-size=512m -p 6901:6901 -e VNC_PW=password %s
 \`\`\`
 
 The container is now accessible via a browser : https://IP_OF_SERVER:6901
@@ -55,6 +70,7 @@ Please note that some functionality, such as audio, uploads, downloads, and micr
             const workspace = JSON.parse(fs.readFileSync(workspaceFile, 'utf8')) as WorkspaceDef;
             const repositoryDescription: string = workspace.description || '';
             const notes: string = workspace.notes || '';
+            const defaultImage = workspace.compatibility[0].image || 'public.ecr.aws/bramblethorn/'+repositoryName;
             const repo = new ecr.CfnPublicRepository(stack, cdkName, {
                 repositoryName: repositoryName,
                 repositoryCatalogData: {
@@ -67,7 +83,7 @@ Please note that some functionality, such as audio, uploads, downloads, and micr
                         'x86-64',
                     ],
                     AboutText: (notes || repositoryDescription) + aboutStandardText,
-                    UsageText: format(standaloneUsageText, repositoryName),
+                    UsageText: format(standaloneUsageText, defaultImage),
                 },
                 tags: [],
             });

@@ -139,5 +139,11 @@ Please note that some functionality, such as audio, uploads, downloads, and micr
             'kasm/terminal',
             '../../workspaces/Terminal/workspace.json',
         );
+
+        newCfnPublicRepository(this,
+            'ECRPublicRepository_graphql-voyager',
+            'kasm/graphql-voyager',
+            '../../workspaces/GraphQL-Voyager/workspace.json',
+        );
     }
 }

@@ -14,7 +14,7 @@
   "require_gpu": false,
   "enabled": true,
   "image_type": "Container",
-  "notes": "",
+  "notes": "This workspace uses a locally hosted graphql-voyager so that it won't leak your target's data.",
   "architecture": [
     "amd64",
     "arm64"

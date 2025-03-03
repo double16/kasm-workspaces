@@ -2,6 +2,7 @@
   "friendly_name": "BloodHound",
   "description": "BloodHound uses graph theory to reveal the hidden and often unintended relationships within an Active Directory or Azure environment.",
   "image_src": "blooghound.svg",
+  "allow_network_selection": true,
   "cores": 2,
   "memory": 2048,
   "gpu_count": 0,

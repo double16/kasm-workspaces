@@ -2,6 +2,62 @@ import * as cdk from 'aws-cdk-lib';
 import * as ecr from 'aws-cdk-lib/aws-ecr';
 import {format} from "util";
 import * as fs from 'fs';
+import * as fse from 'fs-extra';
+import * as sharp from 'sharp';
+import * as path from 'path';
+
+/**
+ * Converts an image file to PNG, resizes if needed, and encodes it to Base64.
+ * @param {string} filename - Path to the image file.
+ * @returns {Promise<string | null>} - Base64 encoded PNG string or null if validation fails.
+ */
+async function encodeImageToPngBase64(filename: string): Promise<string | null> {
+    const allowedExtensions = ['.png', '.jpg', '.jpeg', '.svg'];
+    const ext = path.extname(filename).toLowerCase();
+
+    if (!allowedExtensions.includes(ext)) {
+        console.error('Unsupported file format. Only PNG, JPG, and SVG are allowed.');
+        return null;
+    }
+
+    try {
+        let pngBuffer: Buffer;
+
+        if (ext === '.png') {
+            pngBuffer = await fse.readFile(filename);
+        } else {
+            let image = sharp(filename);
+
+            if (ext === '.svg') {
+                // Convert SVG to PNG at a reasonable default resolution
+                image = image.resize(300, 300, { fit: 'inside' });
+            }
+
+            // Convert non-PNG formats to PNG
+            pngBuffer = await image.toFormat('png').toBuffer();
+        }
+
+        // Ensure image is within size limits
+        const metadata = await sharp(pngBuffer).metadata();
+        if ((metadata.width && metadata.width > 2048) || (metadata.height && metadata.height > 2048)) {
+            pngBuffer = await sharp(pngBuffer)
+                .resize(2048, 2048, { fit: 'inside' })
+                .toBuffer();
+        }
+
+        // Check file size (limit: 500KB)
+        if (pngBuffer.length > 500 * 1024) {
+            console.error('File size exceeds 500KB after conversion.');
+            return null;
+        }
+
+        // Convert to Base64
+        return pngBuffer.toString('base64');
+    } catch (error) {
+        console.error(`Error processing file: ${(error as Error).message}`);
+        return null;
+    }
+}
 
 class CompatibilityEntry {
     version: string;
@@ -21,6 +77,7 @@ class WorkspaceDef {
     description: string;
     notes: string;
     compatibility: CompatibilityEntry[];
+    image_src: string;
 }
 
 export interface KasmWorkspacesStackProps extends cdk.StackProps {
@@ -67,8 +124,10 @@ Please note that some functionality, such as audio, uploads, downloads, and micr
 `
 
         function newCfnPublicRepository(stack: KasmWorkspacesStack, cdkName: string, repositoryName: string, workspaceFile: string) {
+            const workspaceDir = path.dirname(workspaceFile);
             const workspace = JSON.parse(fs.readFileSync(workspaceFile, 'utf8')) as WorkspaceDef;
             const repositoryDescription: string = workspace.description || '';
+            const logoFile: string = workspace.image_src ? path.join(workspaceDir, workspace.image_src) : '';
             const notes: string = workspace.notes || '';
             const defaultImage = workspace.compatibility[0].image || 'public.ecr.aws/bramblethorn/'+repositoryName;
             const repo = new ecr.CfnPublicRepository(stack, cdkName, {
@@ -88,6 +147,17 @@ Please note that some functionality, such as audio, uploads, downloads, and micr
                 tags: [],
             });
             repo.cfnOptions.deletionPolicy = cdk.CfnDeletionPolicy.RETAIN;
+
+            /* TODO: uncomment when logoImageBlob is available
+            if (logoFile) {
+                encodeImageToPngBase64(logoFile).then((encoded : string | null) => {
+                    if (encoded) {
+                        repo.repositoryCatalogData.logoImageBlob = encoded;
+                    }
+                });
+            }
+            */
+
             return repo;
         }
 

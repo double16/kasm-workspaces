@@ -152,7 +152,7 @@ Please note that some functionality, such as audio, uploads, downloads, and micr
             if (logoFile) {
                 encodeImageToPngBase64(logoFile).then((encoded : string | null) => {
                     if (encoded) {
-                        repo.repositoryCatalogData.logoImageBlob = encoded;
+                        repo.repositoryCatalogData.LogoImageBlob = encoded;
                     }
                 });
             }

@@ -4,7 +4,7 @@
   "description": "A powerful knowledge base that works on top of a local folder of plain text Markdown files.",
   "allow_network_selection": false,
   "cores": 1,
-  "memory": 1536,
+  "memory": 1384,
   "gpu_count": 0,
   "cpu_allocation_method": "Shares",
   "docker_registry": "https://public.ecr.aws/bramblethorn",

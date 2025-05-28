@@ -22,7 +22,7 @@
   },
   "allow_network_selection": true,
   "cores": 2,
-  "memory": 6144,
+  "memory": 4096,
   "gpu_count": 0,
   "cpu_allocation_method": "Shares",
   "docker_registry": "https://public.ecr.aws/bramblethorn",

@@ -8,6 +8,7 @@
   "gpu_count": 0,
   "cpu_allocation_method": "Shares",
   "docker_registry": "https://public.ecr.aws/bramblethorn",
+  "name": "public.ecr.aws/bramblethorn/kasm/graphql-voyager:1.16.1-rolling-weekly",
   "categories": [
     "Desktop",
     "Security"

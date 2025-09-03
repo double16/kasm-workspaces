@@ -181,12 +181,6 @@ Please note that some functionality, such as audio, uploads, downloads, and micr
         );
 
         newCfnPublicRepository(this,
-            'ECRPublicRepository00kasmilspy00tryYD',
-            'kasm/ilspy',
-            '../../workspaces/ILSpy/workspace.json',
-        );
-
-        newCfnPublicRepository(this,
             'ECRPublicRepository00kasmkali00mIogK',
             'kasm/kali',
             '../../workspaces/Kali/workspace.json',

@@ -31,6 +31,15 @@
         "1.9.14",
         "1.16.1-rolling-weekly"
       ]
+    },
+    {
+      "version": "1.18.x",
+      "image": "public.ecr.aws/bramblethorn/kasm/obsidian:1.18.0-rolling-weekly",
+      "uncompressed_size_mb": 4500,
+      "available_tags": [
+        "1.11.5",
+        "1.18.0-rolling-weekly"
+      ]
     }
   ]
 }

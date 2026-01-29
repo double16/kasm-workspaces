@@ -38,6 +38,14 @@
       "available_tags": [
         "1.16.1-rolling-weekly"
       ]
+    },
+    {
+      "version": "1.18.x",
+      "image": "public.ecr.aws/bramblethorn/kasm/terminal:1.18.0-rolling-weekly",
+      "uncompressed_size_mb": 3200,
+      "available_tags": [
+        "1.18.0-rolling-weekly"
+      ]
     }
   ]
 }

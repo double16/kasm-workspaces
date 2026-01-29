@@ -187,12 +187,6 @@ Please note that some functionality, such as audio, uploads, downloads, and micr
         );
 
         newCfnPublicRepository(this,
-            'ECRPublicRepository00kasmobsidian00qT2sK',
-            'kasm/obsidian',
-            '../../workspaces/Obsidian/workspace.json',
-        );
-
-        newCfnPublicRepository(this,
             'ECRPublicRepository00kasmparrot00BeBfA',
             'kasm/parrot',
             '../../workspaces/Parrot/workspace.json',

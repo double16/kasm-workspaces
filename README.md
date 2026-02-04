@@ -193,7 +193,7 @@ Workspace Name
   ],
   "compatibility": [
     {
-      "version": "1.16.x",
+      "version": "1.18.x",
       "image": "kasmweb/vs-code:1.16",
       "uncompressed_size_mb": 2428,
       "available_tags": [
@@ -244,7 +244,7 @@ The compatibility property is an array of objects and needs a bit more explanati
 ```json
   "compatibility": [
     {
-      "version": "1.16.x",
+      "version": "1.18.x",
       "image": "kasmweb/chromium:1.16.0-rolling-daily",
       "uncompressed_size_mb": 2643,
       "available_tags": [
@@ -279,7 +279,7 @@ node add_next_version.js
 
 This will add a new entry for every single workspace, but the size will be set to 0, this is so you can run the `get_image_sizes.js` script. This will loop through each `image` that has an uncompressed_size_mb of 0 and will pull the image, get the size, update the workspace json and remove the image. 
 
-This can take a long time if you have a lot of workspaces and dependng on their sizes, but if the script crashes out, you can just start it agin and it will carry on from where it left off. 
+This can take a long time if you have a lot of workspaces and depending on their sizes, but if the script crashes out, you can just start it agin and it will carry on from where it left off. 
 
 ```
 node add_next_version.js

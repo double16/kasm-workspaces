@@ -175,12 +175,6 @@ Please note that some functionality, such as audio, uploads, downloads, and micr
         );
 
         newCfnPublicRepository(this,
-            'ECRPublicRepository00kasmideace00Mfqu3',
-            'kasm/ideace',
-            '../../workspaces/IDEACE/workspace.json',
-        );
-
-        newCfnPublicRepository(this,
             'ECRPublicRepository00kasmkali00mIogK',
             'kasm/kali',
             '../../workspaces/Kali/workspace.json',

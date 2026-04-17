@@ -1,6 +1,6 @@
 {
   "friendly_name": "IntelliJ IDEA Ultimate",
-  "description": "The IDE for Java and Kotlin enthusiasts. Requires a valid JetBrains license.",
+  "description": "The leading IDE for professional development in Java and Kotlin.",
   "image_src": "intellij-idea.svg",
   "cores": 1,
   "memory": 2048,
